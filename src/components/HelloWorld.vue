@@ -1,81 +1,13 @@
 <template>
   <v-app style="background-image: radial-gradient(at 42% top, #3D3E43, #191A1F); border-radius: 0;">
-    <v-app-bar style="background-color: transparent; position: fixed" flat dark>B</v-app-bar>
+    <v-app-bar style="background-color: transparent; position: fixed" flat dark>D</v-app-bar>
     <v-window v-model="window" class="elevation-1" vertical>
       <v-window-item v-for="n in length" :key="n">
         <v-card elevation="0" flat height="100vh" color="transparent" v-if="n === 1">
-          <v-app style="background-color: transparent">
-            <v-container fill-height>
-              <v-layout justify-center align-center>
-                <v-card flat color="transparent">
-                  <v-card-text>
-                    <span style="font-size: 16px" class="white--text ml-5">Eu sou</span>
-                  </v-card-text>
-                  <v-card-text class="mt-10 pt-1">
-                    <span style="font-size: 140px" class="font-weight-bold white--text">BOSCA</span>
-                  </v-card-text>
-                  <v-card-text class="text-right">
-                    <span
-                      style="font-size: 16px"
-                      class="text-right white--text ml-5 mb-0 pb-0"
-                    >Fullstack developer</span>
-                  </v-card-text>
-                </v-card>
-              </v-layout>
-            </v-container>
-          </v-app>
+          <dino-intro />
         </v-card>
         <v-card elevation="0" flat color="transparent" v-if="n === 2">
-          <v-app style="background-color: transparent">
-            <v-container grid-list-md fill-height>
-              <v-layout row wrap justify-center align-center>
-                <v-flex xs4 class="pb-0 mb-0">
-                  <v-card
-                    style="filter: blur(3px); border-radius: 20px;"
-                    height="50vh"
-                    elevation="10"
-                    color="transparent"
-                  >
-                    <v-img height="50vh" src="img/medicine1.jpg"></v-img>
-                  </v-card>
-                </v-flex>
-                <v-flex xs4 class="pb-0 mb-0">
-                  <v-card
-                    height="60vh"
-                    elevation="10"
-                    color="transparent"
-                    style="border-radius: 20px;"
-                  >
-                    <v-img style="filter: blur(1px);" height="60vh" src="img/medicine2.jpg"></v-img>
-                    <v-sheet
-                      class="v-sheet--offset mx-auto text-center pa-0"
-                      color="transparent"
-                      elevation="0"
-                      max-width="calc(100% - 32px)"
-                    >
-                      <span
-                        style="font-size: 140px; text-shadow: 5px 5px 10px black;"
-                        class="font-weight-bold white--text"
-                      >MIDOW</span>
-                    </v-sheet>
-                  </v-card>
-                </v-flex>
-                <v-flex xs4 class="pb-0 mb-0">
-                  <v-card
-                    height="50vh"
-                    style="filter: blur(3px); border-radius: 20px;"
-                    elevation="10"
-                    color="transparent"
-                  >
-                    <v-img height="50vh" src="img/medicine3.jpg"></v-img>
-                  </v-card>
-                </v-flex>
-                <v-btn outlined dark large>
-                  <v-icon left>mdi-github-circle</v-icon>Veja o github do projeto
-                </v-btn>
-              </v-layout>
-            </v-container>
-          </v-app>
+          <dino-opensource/>
         </v-card>
       </v-window-item>
     </v-window>
@@ -110,7 +42,7 @@ export default {
     marker: true,
     delta: null,
     direction: null,
-    interval: 100,
+    interval: 50,
     counter1: 0,
     counter2: null,
     counter3: null,
@@ -207,10 +139,5 @@ li {
 }
 a {
   color: #42b983;
-}
-
-.v-sheet--offset {
-  bottom: 90px;
-  position: relative;
 }
 </style>
